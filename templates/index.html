@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% url 'bootstrap' %}/css/bootstrap.calendar.css" type="text/css" />
+
+
+    <!-- jQuery and the Calendar plugin files -->
+    <script type="text/javascript" src="{% url 'bootstrap' %}/js/jquery.js" ></script>
+    <script type="text/javascript" src="{% url 'bootstrap' %}/js/bootstrap.js" ></script>
+    <script type="text/javascript" src="{% url 'bootstrap' %}/js/bootstrap.calendar.js" ></script>
+
+    <script type="text/javascript" src="{% url 'bootstrap' %}/js/custom.js" ></script>
+
+
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="row-fluid">
+        <div class="span4" id="calendar"></div>
+        <div class="span5 well" style="height: 500px;overflow-y: scroll;" id="task-box">
+            <div class="accordion" id="tasks">
+                {% for task in tasks %}
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#tasks" href="#{{ task }}">
+                                {{ task }}
+                            </a>
+                        </div>
+                        <div id="{{ task }}" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                {{ task.body }}
+                            </div>
+                        </div>
+                    </div>
+
+                {% endfor %}
+
+        </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

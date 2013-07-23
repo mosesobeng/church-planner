@@ -1,0 +1,31 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link rel="stylesheet" href="{% url 'bootstrap' %}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{% url 'bootstrap' %}/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="{% url 'bootstrap' %}/css/custom.css" />
+    <script src="{% url 'bootstrap' %}/js/jquery-1.9.1.js" type="text/javascript" ></script>
+    <title>SEF::</title>
+    {% endblock %}
+</head>
+<body class="container">
+<div class="row">
+    <a href="/member-logout">logout</a>
+</div>
+
+{% block content%}
+
+{% endblock %}
+<div class="row">
+    <footer>
+        <p>Copyright &copy; vive-inc. All rights reserved.  </p>
+    </footer>
+</div>
+</body>
+</html>
